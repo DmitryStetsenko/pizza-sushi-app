@@ -1,2 +1,2 @@
-import PizzaSinge from "./PizzaSinge";
-export default PizzaSinge;
+import PizzaSingle from "./PizzaSingle";
+export default PizzaSingle;
