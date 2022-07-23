@@ -30,6 +30,10 @@
     width: 25px;
     height: 25px;
     padding: 5px;
+    border-radius: 50%;
+    &:hover {
+      background-color: lighten($orange, 8%);
+    }
   }
   span {
     margin: 0 3px;
@@ -37,6 +41,7 @@
 
   &:hover {
     background-color: darken($orange, 8%);
+
   }
 
   &:active {
