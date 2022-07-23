@@ -5,7 +5,10 @@ import Categories from './components/Categories';
 import Sort from './components/Sort';
 import PizzaSinge from './components/products/PizzaSingle';
 
+import pizzasData from './assets/pizza.json';
+
 const App = () => {
+	const {pizzas, aliases} = pizzasData;
 	return (
 		<>
 			<Header />
@@ -17,15 +20,9 @@ const App = () => {
 					</div>
 					<h2 className="content__title">Все пиццы</h2>
 					<div className="content__items">
-						<PizzaSinge />
-						<PizzaSinge />
-						<PizzaSinge />
-						<PizzaSinge />
-						<PizzaSinge />
-						<PizzaSinge />
-						<PizzaSinge />
-						<PizzaSinge />
-						<PizzaSinge />
+						{
+							pizzas.map(pizza => <PizzaSinge key={ pizza.id } pizza={ pizza } aliases={ aliases }/>)
+						}
 					</div>
 				</div>
 			</div>

@@ -1,0 +1,78 @@
+{
+    
+    "aliases": {
+        "types": ["Тонкое", "Традиционное"]
+    },
+    "pizzas": [
+        {
+            "id": 0,
+            "imgUrl": "./img/products/pizza/pizza-name1.jpg",
+            "title": "Пеперони фреш с перцем",
+            "types": [0, 1],
+            "sizes": [26, 30, 40],
+            "price": 150,
+            "category": 0,
+            "rating": 4
+        },
+        {
+            "id": 1,
+            "imgUrl": "./img/products/pizza/pizza-name1.jpg",
+            "title": "Чизбургер",
+            "types": [0],
+            "sizes": [26, 40],
+            "price": 120,
+            "category": 1,
+            "rating": 6
+        },
+        {
+            "id": 2,
+            "imgUrl": "./img/products/pizza/pizza-name1.jpg",
+            "title": "Сырная",
+            "types": [0],
+            "sizes": [26, 40],
+            "price": 120,
+            "category": 1,
+            "rating": 6
+        },
+        {
+            "id": 3,
+            "imgUrl": "./img/products/pizza/pizza-name1.jpg",
+            "title": "Охотничья",
+            "types": [0, 1],
+            "sizes": [26, 30, 40],
+            "price": 170,
+            "category": 2,
+            "rating": 6
+        },
+        {
+            "id": 4,
+            "imgUrl": "./img/products/pizza/pizza-name1.jpg",
+            "title": "Чизбургер",
+            "types": [0],
+            "sizes": [26, 40],
+            "price": 120,
+            "category": 1,
+            "rating": 6
+        },
+        {
+            "id": 5,
+            "imgUrl": "./img/products/pizza/pizza-name1.jpg",
+            "title": "Сырная",
+            "types": [0],
+            "sizes": [26, 40],
+            "price": 120,
+            "category": 1,
+            "rating": 6
+        },
+        {
+            "id": 6,
+            "imgUrl": "./img/products/pizza/pizza-name1.jpg",
+            "title": "Охотничья",
+            "types": [0, 1],
+            "sizes": [26, 30, 40],
+            "price": 170,
+            "category": 2,
+            "rating": 6
+        }
+    ]
+}

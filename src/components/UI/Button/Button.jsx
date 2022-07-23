@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
 const Button = () => {
-    const [itemCount, setItemCount] = useState(0);
+    const [itemCount, setItemCount] = useState(1);
     const incItem = () => {
         setItemCount(itemCount + 1);
     }
     const decItem = () => {
-        setItemCount(itemCount - 1 >= 0 ? itemCount - 1 : 0);
+        setItemCount(itemCount - 1 >= 1 ? itemCount - 1 : 1);
     }
 
     return (
