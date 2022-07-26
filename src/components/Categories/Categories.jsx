@@ -15,7 +15,7 @@ const Categories = () => {
         <li
             key={ item }
             onClick={ () => setActiveIndex(index) }
-            className={ activeIndex == index ? 'active' : '' }
+            className={ activeIndex === index ? 'active' : false }
         >
             { item }
         </li>
