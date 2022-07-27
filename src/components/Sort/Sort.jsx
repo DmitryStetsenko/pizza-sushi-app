@@ -3,6 +3,13 @@ import SortPopup from './SortPopup/SortPopup';
 
 const Sort = () => {
     const [open, setOpen] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const sortList = [
+        'популярности',
+        'цене',
+        'алфавиту'
+    ];
 
     return (
         <div className="sort">
@@ -13,9 +20,9 @@ const Sort = () => {
                         fill="#2C2C2C" />
                 </svg>
                 <b>Сортировка по:</b>
-                <span onClick={() => setOpen(!open)}>популярности</span>
+                <span onClick={() => setOpen(!open)}>{ sortList[activeIndex] }</span>
             </div>
-            { open && <SortPopup className="sort__popup"/> }
+            { open && <SortPopup className="sort__popup" sortList={ sortList } activeIndex={ activeIndex } setActiveIndex={ setActiveIndex }/> }
         </div>
     );
 };

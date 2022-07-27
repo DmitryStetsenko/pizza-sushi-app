@@ -1,12 +1,20 @@
 import React from 'react';
 
-const SortPopup = ({className}) => {
+const SortPopup = ({className, sortList, activeIndex, setActiveIndex}) => {
     return (
         <div className={ className }>
             <ul>
-                <li className="active">популярности</li>
-                <li>цене</li>
-                <li>алфавиту</li>
+                {
+                    sortList.map((sortItem, index) => 
+                            <li 
+                                key={ sortItem } 
+                                className={index === activeIndex ? 'active' : undefined }
+                                onClick={ () => setActiveIndex(index) }
+                            >
+                                { sortItem }
+                            </li>
+                    )
+                }
             </ul>
         </div>
     );
