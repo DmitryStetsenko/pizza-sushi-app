@@ -16,7 +16,7 @@ const ProductTabs = ({ options,  unit, aliases}) => {
                             <li 
                                 onClick={() => setActiveIndex(index)}
                                 key={ option } 
-                                className={ index === activeIndex ? 'active' : false }
+                                className={ index === activeIndex ? 'active' : undefined }
                             >
                                 { optionValue }
                             </li>
