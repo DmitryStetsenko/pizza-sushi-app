@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SortPopup = ({className, sortList, activeIndex, setActiveIndex}) => {
+const SortPopup = ({className, sortList, activeIndex, toggleSortPopup}) => {
     return (
         <div className={ className }>
             <ul>
@@ -9,7 +9,7 @@ const SortPopup = ({className, sortList, activeIndex, setActiveIndex}) => {
                             <li 
                                 key={ sortItem } 
                                 className={index === activeIndex ? 'active' : undefined }
-                                onClick={ () => setActiveIndex(index) }
+                                onClick={ () => toggleSortPopup(index) }
                             >
                                 { sortItem }
                             </li>

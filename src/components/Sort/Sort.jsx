@@ -11,6 +11,11 @@ const Sort = () => {
         'алфавиту'
     ];
 
+    const toggleSortPopup = (index) => {
+        setActiveIndex(index);
+        setOpen(false);
+    }
+
     return (
         <div className="sort">
             <div className="sort__label">
@@ -22,7 +27,7 @@ const Sort = () => {
                 <b>Сортировка по:</b>
                 <span onClick={() => setOpen(!open)}>{ sortList[activeIndex] }</span>
             </div>
-            { open && <SortPopup className="sort__popup" sortList={ sortList } activeIndex={ activeIndex } setActiveIndex={ setActiveIndex }/> }
+            { open && <SortPopup className="sort__popup" sortList={ sortList } activeIndex={ activeIndex } toggleSortPopup={ toggleSortPopup }/> }
         </div>
     );
 };

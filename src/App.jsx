@@ -5,10 +5,24 @@ import Categories from './components/Categories';
 import Sort from './components/Sort';
 import PizzaSinge from './components/products/PizzaSingle';
 
-import pizzasData from './assets/pizza.json';
+import { useEffect, useState } from 'react';
 
 const App = () => {
-	const {pizzas, aliases} = pizzasData;
+	const apiUrl = 'https://62e50e2620afdf238d76adab.mockapi.io';
+
+	const [pizzas, setPizzas] = useState([]);
+	const [aliases, setAliases] = useState([]);
+	
+	useEffect(() => {
+		fetch(`${apiUrl}/items`)
+			.then(res => res.json())
+			.then(items => setPizzas(items));
+
+		fetch(`${apiUrl}/aliases`)
+			.then(res => res.json())
+			.then(items => setAliases(items[0]));
+	}, []);
+
 	return (
 		<>
 			<Header />
