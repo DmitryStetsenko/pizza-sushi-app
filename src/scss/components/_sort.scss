@@ -3,6 +3,7 @@
 .sort {
 	@include noselect;
 	position: relative;
+	padding: 15px 0;
 
 	&__label {
 		display: flex;

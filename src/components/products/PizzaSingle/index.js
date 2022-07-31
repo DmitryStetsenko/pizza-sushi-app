@@ -1,2 +1,3 @@
 import PizzaSingle from "./PizzaSingle";
-export default PizzaSingle;
+import PizzaSingleSceleton from "./PizzaSingleSceleton"; 
+export { PizzaSingle, PizzaSingleSceleton };

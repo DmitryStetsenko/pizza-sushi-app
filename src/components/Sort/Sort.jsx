@@ -5,16 +5,9 @@ const Sort = () => {
     const [open, setOpen] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const sortList = [
-        'популярности',
-        'цене',
-        'алфавиту'
-    ];
+    const sortList = ['популярности', 'цене', 'алфавиту'];
 
-    const toggleSortPopup = (index) => {
-        setActiveIndex(index);
-        setOpen(false);
-    }
+    const popUpProps = {sortList, activeIndex, setActiveIndex, setOpen};
 
     return (
         <div className="sort">
@@ -27,7 +20,7 @@ const Sort = () => {
                 <b>Сортировка по:</b>
                 <span onClick={() => setOpen(!open)}>{ sortList[activeIndex] }</span>
             </div>
-            { open && <SortPopup className="sort__popup" sortList={ sortList } activeIndex={ activeIndex } toggleSortPopup={ toggleSortPopup }/> }
+            { open && <SortPopup className="sort__popup" popUpProps={ popUpProps }/> }
         </div>
     );
 };

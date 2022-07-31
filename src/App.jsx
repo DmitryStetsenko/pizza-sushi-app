@@ -3,7 +3,7 @@ import './scss/app.scss';
 import Header from './components/Header';
 import Categories from './components/Categories';
 import Sort from './components/Sort';
-import PizzaSinge from './components/products/PizzaSingle';
+import { PizzaSingle, PizzaSingleSceleton } from './components/products/PizzaSingle';
 
 import { useEffect, useState } from 'react';
 
@@ -12,11 +12,15 @@ const App = () => {
 
 	const [pizzas, setPizzas] = useState([]);
 	const [aliases, setAliases] = useState([]);
+	const [isLoading, setIsLoading] = useState(true);
 	
 	useEffect(() => {
 		fetch(`${apiUrl}/items`)
 			.then(res => res.json())
-			.then(items => setPizzas(items));
+			.then(items => {
+				setPizzas(items);
+				setIsLoading(false);
+			});
 
 		fetch(`${apiUrl}/aliases`)
 			.then(res => res.json())
@@ -34,8 +38,9 @@ const App = () => {
 					</div>
 					<h2 className="content__title">Все пиццы</h2>
 					<div className="content__items">
-						{
-							pizzas.map(pizza => <PizzaSinge key={ pizza.id } pizza={ pizza } aliases={ aliases }/>)
+						{ isLoading 
+							? [...new Array(6)].map((_, index) => <PizzaSingleSceleton key={ index }/>)
+							: pizzas.map(pizza => <PizzaSingle key={ pizza.id } pizza={ pizza } aliases={ aliases }/>)
 						}
 					</div>
 				</div>
